@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/bienvenida.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/principal_ambulancia.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/principal_usuario.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/registro.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/edgar/AndroidStudioProyects/prueba_repo/app/src/main/res/layout/activity_main.xml" value="0.25" />
       </map>
     </option>
