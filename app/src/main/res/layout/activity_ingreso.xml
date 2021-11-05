@@ -52,7 +52,7 @@
         app:layout_constraintVertical_bias="0.601" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btguardar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"

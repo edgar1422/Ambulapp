@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/FondoAmbulApp"
+        android:backgroundTint="#DCDAE4EA"
+        android:backgroundTintMode="multiply"
+        app:layout_anchor="@+id/constraintLayout"
+        app:layout_anchorGravity="center"
+        tools:context=".MainActivity"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="53dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="115dp"
+            android:layout_height="31dp"
+            android:text="REGISTRO"
+            android:textColor="#3D5AFE"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.292" />
+
+        <Button
+            android:id="@+id/btguardar"
+            android:layout_width="71dp"
+            android:layout_height="31dp"
+            android:background="#C41C80EC"
+            android:onClick="calcular"
+            android:text="Guardar"
+            android:textColor="#F6F4F4"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.855"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ciudad"
+            app:layout_constraintVertical_bias="0.358" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="278dp"
+            android:layout_height="162dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/LogoAmbulaap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="282dp"
+            android:layout_height="40dp"
+            tools:layout_editor_absoluteX="64dp"
+            tools:layout_editor_absoluteY="246dp">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/usuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Usuario" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/ambulancia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ambulancia" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Por favor ingrese su información"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/EmailAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+            app:layout_constraintVertical_bias="0.152" />
+
+        <EditText
+            android:id="@+id/nombre"
+            android:layout_width="306dp"
+            android:layout_height="37dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Nombres"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/EmailAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.514"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            app:layout_constraintVertical_bias="0.195" />
+
+        <EditText
+            android:id="@+id/apellidos"
+            android:layout_width="307dp"
+            android:layout_height="35dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Apellidos"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/EmailAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nombre"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/EmailAddress"
+            android:layout_width="306dp"
+            android:layout_height="38dp"
+            android:ems="10"
+            android:hint="Correo Electrónico"
+            android:inputType="textEmailAddress"
+            android:text="Correo electrónico"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="54dp"
+            tools:layout_editor_absoluteY="398dp" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="307dp"
+            android:layout_height="38dp"
+            android:ems="10"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:text="Ingrese contraseña"
+            app:layout_constraintBottom_toTopOf="@+id/btguardar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.519"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/EmailAddress"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/telefono"
+            android:layout_width="306dp"
+            android:layout_height="38dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Teléfono"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/btguardar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.514"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/password"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/placas"
+            android:layout_width="306dp"
+            android:layout_height="36dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="EPS"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/btguardar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.523"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/telefono"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/fecha"
+            android:layout_width="306dp"
+            android:layout_height="35dp"
+            android:ems="10"
+            android:inputType="date"
+            android:text="Fecha de nacimiento (dd/mm/aaaa)"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/btguardar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.514"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/placas"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/direccion"
+            android:layout_width="305dp"
+            android:layout_height="39dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Direccion de residencia"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.528"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fecha"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/ciudad"
+            android:layout_width="306dp"
+            android:layout_height="39dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Ciudad"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.533"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/direccion"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    "
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
