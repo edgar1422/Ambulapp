@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ingreso);
+        setContentView(R.layout.registro_amb);
 
         //correo_txt = (EditText) findViewById(R.id.et_correo);
         //contrasena_txt = (EditText) findViewById(R.id.et_contraseña);
