@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ingreso);
 
-        correo_txt = (EditText) findViewById(R.id.et_correo);
-        contrasena_txt = (EditText) findViewById(R.id.et_contraseña);
+        //correo_txt = (EditText) findViewById(R.id.et_correo);
+        //contrasena_txt = (EditText) findViewById(R.id.et_contraseña);
 
 
 
