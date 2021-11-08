@@ -7,6 +7,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,11 +20,25 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ingreso);
+        setContentView(R.layout.activity_principal_amb);
 
         //correo_txt = (EditText) findViewById(R.id.et_correo);
         //contrasena_txt = (EditText) findViewById(R.id.et_contraseña);
 
+        final DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
+
+        findViewById(R.id.imageMenu).setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+
+        });
+
+
+        NavigationView navigationView = findViewById(R.id.navigationview);
+        navigationView.setItemIconTintList(null);
 
 
     }
