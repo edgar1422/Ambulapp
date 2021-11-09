@@ -6,4 +6,6 @@
     <string name="et_contraseña">Ingrese su contraseña</string>
     <string name="button_ingresar">INGRESAR</string>
     <string name="cb_recordarme">Recordarme</string>
+    <string name="button_registro">REGISTRARSE</string>
+
 </resources>

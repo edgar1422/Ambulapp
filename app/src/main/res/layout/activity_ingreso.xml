@@ -25,14 +25,14 @@
         app:layout_constraintVertical_bias="0.29" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/et_correo"
         android:layout_width="221dp"
         android:layout_height="57dp"
         android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="Ingrese su correo"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
+        app:layout_constraintBottom_toTopOf="@+id/et_contrasena"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.547"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +40,7 @@
         app:layout_constraintVertical_bias="0.978" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/et_contrasena"
         android:layout_width="223dp"
         android:layout_height="53dp"
         android:ems="10"
@@ -105,5 +105,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.028" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="146dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="132dp"
+        android:background="#C41C80EC"
+        android:text="@string/button_registro"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintVertical_bias="0.39" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
