@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -62,31 +63,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.052" />
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabLayout"
-            android:layout_width="282dp"
-            android:layout_height="40dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.363">
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/usuario"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Usuario" />
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/ambulancia"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ambulancia" />
-
-        </com.google.android.material.tabs.TabLayout>
 
         <TextView
             android:id="@+id/textView3"
@@ -235,7 +211,40 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.903" />
 
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tablayout"
+            android:layout_width="283dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.355">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabusuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/icono_usuario"
+                android:text="USUARIO" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabambulancia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/icono_ambulancia"
+                android:text="AMBULANCIA" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </androidx.viewpager.widget.ViewPager>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     "
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>
