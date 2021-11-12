@@ -8,7 +8,19 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="664dp">
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="378dp"
+            android:layout_height="323dp"
+            android:src="@drawable/mapa"
+            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ImageView>
 
 
         <Button
