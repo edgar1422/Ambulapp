@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -33,6 +34,8 @@ public class Ingreso extends AppCompatActivity {
                 if(correo_str.equals("prueba") && contrasena_str.equals("prueba") ) {
                     Intent i = new Intent(Ingreso.this, ActivityPrincipal.class);
                     startActivity(i);
+                } else {
+                    Toast.makeText(Ingreso.this, "Datos incorrectos, vuelva a intentarlo", Toast.LENGTH_LONG).show();
                 }
 
             }
