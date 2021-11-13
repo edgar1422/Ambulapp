@@ -45,7 +45,7 @@ public class Ingreso extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(Ingreso.this,Registro_usu.class);
+                Intent i = new Intent(Ingreso.this, Registro.class);
                 startActivity(i);
             }
         });

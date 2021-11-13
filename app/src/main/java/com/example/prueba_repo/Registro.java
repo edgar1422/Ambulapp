@@ -4,13 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
-import android.widget.TableLayout;
 
 import com.example.prueba_repo.Controlador.PagerController;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
-public class Registro_usu extends AppCompatActivity {
+public class Registro extends AppCompatActivity {
 
     TabLayout tabLayout;
     ViewPager viewPager;
@@ -22,7 +21,7 @@ public class Registro_usu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registro_usu);
+        setContentView(R.layout.activity_registro);
         tabLayout = findViewById(R.id.tablayout);
         viewPager = findViewById(R.id.viewpager);
         tab1 = findViewById(R.id.tabusuario);
@@ -33,11 +32,6 @@ public class Registro_usu extends AppCompatActivity {
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
                 if(tab.getPosition()==0){
                     pagerAdapter.notifyDataSetChanged();
@@ -45,6 +39,11 @@ public class Registro_usu extends AppCompatActivity {
                 if(tab.getPosition()==1) {
                     pagerAdapter.notifyDataSetChanged();
                 }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
             }
 
             @Override

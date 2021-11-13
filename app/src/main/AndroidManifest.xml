@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Prueba_repo">
         <activity
-            android:name=".Registro_usu"
+            android:name=".Registro"
             android:exported="false" />
         <activity
             android:name=".Ingreso"
