@@ -30,14 +30,14 @@
             android:id="@+id/imageLogo"
             android:layout_width="330dp"
             android:layout_height="96dp"
-            android:layout_marginStart="16dp"
             android:background="#2CFFFFFF"
             android:backgroundTint="#4DFFFFFF"
             android:contentDescription="@string/app_name"
             android:src="@drawable/logoambulaap"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.appcompat.widget.Toolbar>
 
