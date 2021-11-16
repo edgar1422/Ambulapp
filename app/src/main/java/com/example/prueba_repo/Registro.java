@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.prueba_repo.Controlador.PagerController;
 import com.google.android.material.tabs.TabItem;
@@ -34,10 +35,14 @@ public class Registro extends AppCompatActivity {
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
                 if(tab.getPosition()==0){
+                    Toast.makeText(Registro.this, "Registro como usuario", Toast.LENGTH_SHORT).show();
                     pagerAdapter.notifyDataSetChanged();
+
                 }
                 if(tab.getPosition()==1) {
+                    Toast.makeText(Registro.this, "Registro como conductor de ambulancia", Toast.LENGTH_SHORT).show();
                     pagerAdapter.notifyDataSetChanged();
+
                 }
             }
 
