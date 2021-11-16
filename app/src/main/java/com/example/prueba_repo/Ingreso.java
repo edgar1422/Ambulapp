@@ -32,7 +32,7 @@ public class Ingreso extends AppCompatActivity {
                 String contrasena_str = contrasena_txt.getText().toString();
 
                 if(correo_str.equals("prueba") && contrasena_str.equals("prueba") ) {
-                    Intent i = new Intent(Ingreso.this, ActivityPrincipal.class);
+                    Intent i = new Intent(Ingreso.this, MapsActivity.class);
                     startActivity(i);
                 } else {
                     Toast.makeText(Ingreso.this, "Datos incorrectos, vuelva a intentarlo", Toast.LENGTH_LONG).show();
