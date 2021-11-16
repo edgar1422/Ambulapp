@@ -1,6 +1,8 @@
 package com.example.prueba_repo;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -8,6 +10,8 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
@@ -32,7 +36,8 @@ import com.google.android.material.navigation.NavigationView;
             navigationView = findViewById(R.id.nav_view);
             toolbar = findViewById(R.id.toolbar);
 
-            getSupportFragmentManager().beginTransaction().add(R.id.content, new Home_Fragment()).commit();
+
+            getSupportFragmentManager().beginTransaction().add(R.id.content, new MapsFragment()).commit();
             setTitle("Inicio");
             // setup toolbar
             setSupportActionBar(toolbar);
@@ -68,7 +73,7 @@ import com.google.android.material.navigation.NavigationView;
             switch (item.getItemId()) {
 
                 case R.id.nav_Inicio:
-                    ft.replace(R.id.content, new Home_Fragment()).commit();
+                    ft.replace(R.id.content, new MapsFragment()).commit();
                     break;
                 case R.id.nav_profile:
                     ft.replace(R.id.content, new Profile_Fragment()).commit();
@@ -89,6 +94,8 @@ import com.google.android.material.navigation.NavigationView;
             setTitle(item.getTitle());
             mDrawerLayout.closeDrawers();
         }
+
+
 
 
     }
