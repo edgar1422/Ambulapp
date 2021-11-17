@@ -70,7 +70,7 @@ public class Ingreso extends AppCompatActivity {
         Dexter.withContext(this).withPermission(Manifest.permission.ACCESS_FINE_LOCATION).withListener(new PermissionListener() {
             @Override
             public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
-                Toast.makeText(Ingreso.this,"Permiso Grantizado",Toast.LENGTH_SHORT).show();
+                Toast.makeText(Ingreso.this,"Permiso Concedido",Toast.LENGTH_SHORT).show();
 
 
             }
