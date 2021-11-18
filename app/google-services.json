@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "193177336938",
+    "project_id": "prueba-repo",
+    "storage_bucket": "prueba-repo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193177336938:android:d5ccb6d6e5a629a856de13",
+        "android_client_info": {
+          "package_name": "com.example.prueba_repo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "193177336938-otf9njeqh0nmgl3bjrbgglupnsc3maeu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSwcRzduD41c6OAcBY2kh8AtdbYxvAwUo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "193177336938-otf9njeqh0nmgl3bjrbgglupnsc3maeu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
