@@ -18,14 +18,17 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 
-
-    public class ActivityPrincipal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class ActivityPrincipal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
         DrawerLayout mDrawerLayout;
         NavigationView navigationView;
         Toolbar toolbar;
+
+    private FirebaseAuth mAuth;
+
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,10 @@ import com.google.android.material.navigation.NavigationView;
             mDrawerLayout = findViewById(R.id.drawerLayout);
             navigationView = findViewById(R.id.nav_view);
             toolbar = findViewById(R.id.toolbar);
+
+            // ...
+        // Initialize Firebase Auth
+            mAuth = FirebaseAuth.getInstance();
 
 
             getSupportFragmentManager().beginTransaction().add(R.id.content, new MapsFragment()).commit();
@@ -89,6 +96,12 @@ import com.google.android.material.navigation.NavigationView;
                     break;
                 case R.id.nav_help:
                     ft.replace(R.id.content, new Ayuda_Fragment()).commit();
+                    break;
+                case R.id.nav_sign_out:
+                    FirebaseAuth.getInstance().signOut();
+                    Intent i = new Intent(this, Ingreso.class);
+                    startActivity(i);
+                    finish();
                     break;
             }
             setTitle(item.getTitle());
