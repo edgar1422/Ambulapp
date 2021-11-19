@@ -121,6 +121,7 @@ public class Ingreso extends AppCompatActivity {
             Toast.makeText(Ingreso.this, "Login exitoso ", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(Ingreso.this, ActivityPrincipal.class);
             startActivity(i);
+
         }else{
             Toast.makeText(Ingreso.this, "Error al ingresar ", Toast.LENGTH_SHORT).show();
 
