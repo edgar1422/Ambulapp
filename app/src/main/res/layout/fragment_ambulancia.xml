@@ -36,14 +36,14 @@
             app:layout_constraintVertical_bias="0.292" />
 
         <Button
-            android:id="@+id/btguardar"
+            android:id="@+id/btguardar_amb"
             android:layout_width="71dp"
             android:layout_height="28dp"
             android:background="#C41C80EC"
-            android:onClick="calcular"
             android:text="Guardar"
             android:textColor="#F6F4F4"
             android:textSize="12sp"
+            android:onClick="register_amb"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.847"
@@ -79,7 +79,7 @@
             app:layout_constraintVertical_bias="0.348" />
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/password_amb"
             android:layout_width="307dp"
             android:layout_height="36dp"
             android:ems="10"
@@ -125,7 +125,7 @@
             tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
-            android:id="@+id/EmailAddress"
+            android:id="@+id/email_amb"
             android:layout_width="307dp"
             android:layout_height="36dp"
             android:ems="10"
