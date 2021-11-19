@@ -33,8 +33,8 @@ public class Ingreso extends AppCompatActivity {
 
     private EditText correo_txt, contrasena_txt;
     private Button btn_login, btn_register;
-    private FirebaseAuth mAuth;
-    private static final String TAG = "tester";
+    private FirebaseAuth mAuth;                                                // se usa para el login
+    private static final String TAG = "tester";                                // se usa para el login
 
 
 
@@ -48,28 +48,17 @@ public class Ingreso extends AppCompatActivity {
         btn_login = (Button) findViewById(R.id.button2);
         btn_register = (Button) findViewById(R.id.button3);
         check_Permission();
-        mAuth = FirebaseAuth.getInstance();
-
-
-
+        mAuth = FirebaseAuth.getInstance();                                         // se usa para el login
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "Ingreso al boton");
 
-                String correo_str = correo_txt.getText().toString();
-                String contrasena_str = contrasena_txt.getText().toString();
+                String correo_str = correo_txt.getText().toString();                // se usa para el login
+                String contrasena_str = contrasena_txt.getText().toString();        // se usa para el login
 
-                signIn(correo_str,contrasena_str);
-               /* if(correo_str.equals("prueba") && contrasena_str.equals("prueba") ) {
-
-
-                    Intent i = new Intent(Ingreso.this, ActivityPrincipal.class);
-                   startActivity(i);
-                } else {
-                    //Toast.makeText(Ingreso.this, "Datos incorrectos, vuelva a intentarlo", Toast.LENGTH_LONG).show();
-                }*/
+                signIn(correo_str,contrasena_str);                                   // se usa para el login
 
             }
         });
@@ -84,15 +73,16 @@ public class Ingreso extends AppCompatActivity {
         });
 
     }
+
     @Override
-    public void onStart() {
+    public void onStart() {                                                       // se usa para el login
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         //updateUI(currentUser);
     }
 
-    private void signIn(String email, String password) {
+    private void signIn(String email, String password) {                          // se usa para el login
         // [START sign_in_with_email]
         Log.d(TAG, "Ingreso al login");
         mAuth.signInWithEmailAndPassword(email, password)
@@ -106,11 +96,10 @@ public class Ingreso extends AppCompatActivity {
                             updateUI(user);
                         } else {
 
-// If sign in fails, display a message to the user.
+                            // If sign in fails, display a message to the user.
                             Log.d(TAG, "signInWithEmail:success");
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(Ingreso.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Ingreso.this, "Datos incorrectos, vuelva a intentarlo", Toast.LENGTH_SHORT).show();
                             //updateUI(null);
                         }
                     }
@@ -118,16 +107,12 @@ public class Ingreso extends AppCompatActivity {
         // [END sign_in_with_email]
     }
 
-    private void updateUI(FirebaseUser user) {
+    private void updateUI(FirebaseUser user) {                                // se usa para el login
         Log.d("tester","test");
-        Toast.makeText(Ingreso.this, "Actualizado ",
-                Toast.LENGTH_SHORT).show();
+        Toast.makeText(Ingreso.this, "Actualizado ", Toast.LENGTH_SHORT).show();
         Intent i = new Intent(Ingreso.this, ActivityPrincipal.class);
         startActivity(i);
     }
-
-
-
 
 
     private void check_Permission() {
@@ -136,9 +121,8 @@ public class Ingreso extends AppCompatActivity {
             @Override
             public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
                 Toast.makeText(Ingreso.this,"Permiso Concedido",Toast.LENGTH_SHORT).show();
-
-
             }
+
 
             @Override
             public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
@@ -147,8 +131,8 @@ public class Ingreso extends AppCompatActivity {
                 Uri uri = Uri.fromParts("package",getPackageName(),"");
                 i.setData(uri);
                 startActivity(i);
-
             }
+
 
             @Override
             public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken) {
