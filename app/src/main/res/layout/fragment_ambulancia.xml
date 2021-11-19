@@ -43,7 +43,6 @@
             android:text="Guardar"
             android:textColor="#F6F4F4"
             android:textSize="12sp"
-            android:onClick="register_amb"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.847"

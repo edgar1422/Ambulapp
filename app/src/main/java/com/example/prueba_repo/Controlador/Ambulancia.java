@@ -61,6 +61,82 @@ public class Ambulancia extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ambulancia, container, false);
+        View root = inflater.inflate(R.layout.fragment_ambulancia, container, false);
+
+
+        // Iniciando firebase
+        mAuth = FirebaseAuth.getInstance();
+        email_amb = (EditText) root.findViewById(R.id.email_amb);
+        password_amb = (EditText) root.findViewById(R.id.password_amb);
+        register_amb = (Button) root.findViewById(R.id.btguardar_amb);
+
+
+        register_amb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String email = email_amb.getText().toString();
+                String password = password_amb.getText().toString();
+
+
+                try{
+                    if (email != null && password != null){
+                        mAuth.createUserWithEmailAndPassword(email, password)
+                                .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<AuthResult> task) {
+                                        if (task.isSuccessful()) {
+                                            // Sign in success, update UI with the signed-in user's information
+
+                                            DatosAmbulancia ambulancia = new DatosAmbulancia(email,password);
+                                            myRef.push().setValue(ambulancia);
+                                            Log.d(TAG, ambulancia.toString());
+
+                                            Log.d(TAG, "createUserWithEmail:success");
+                                            FirebaseUser user = mAuth.getCurrentUser();
+
+                                            updateUI(user);
+                                        } else {
+                                            // If sign in fails, display a message to the user.
+                                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                                            Toast.makeText(getActivity(),"Authentication failed.",
+                                                    Toast.LENGTH_SHORT).show();
+                                            updateUI(null);
+                                        }
+                                    }
+                                });
+                    }
+
+                } catch (Exception e) {
+                    Toast.makeText(getActivity(),"Los campos 'correo' y 'contraseña' estan vacios",
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        return root;
+
+    }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        //if(currentUser != null){
+        //reload();
+    }
+
+    private void updateUI(FirebaseUser user) {                                // se usa para el login
+        if (user != null){
+            Log.d("tester","test");
+            Toast.makeText(getActivity(), "Usuario creado con exito ", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(getActivity(), ActivityPrincipal.class);
+            startActivity(i);
+        }else{
+            Toast.makeText(getActivity(), "No se pudo crear el susario ", Toast.LENGTH_SHORT).show();
+
+        }
     }
 }
