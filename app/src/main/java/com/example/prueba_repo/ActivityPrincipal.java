@@ -26,6 +26,7 @@ public class ActivityPrincipal extends AppCompatActivity implements NavigationVi
         DrawerLayout mDrawerLayout;
         NavigationView navigationView;
         Toolbar toolbar;
+        private FirebaseAuth mAuth;
 
     private FirebaseAuth mAuth;
 
@@ -41,6 +42,9 @@ public class ActivityPrincipal extends AppCompatActivity implements NavigationVi
 
             // ...
         // Initialize Firebase Auth
+            mAuth = FirebaseAuth.getInstance();
+
+            //Inicializa Firebase Auth
             mAuth = FirebaseAuth.getInstance();
 
 
@@ -103,6 +107,14 @@ public class ActivityPrincipal extends AppCompatActivity implements NavigationVi
                     startActivity(i);
                     finish();
                     break;
+                case R.id.nav_sign_out:
+                    FirebaseAuth.getInstance().signOut();
+                    Intent i = new Intent(this, Ingreso.class);
+                    startActivity(i);
+                    finish();
+                    break;
+
+
             }
             setTitle(item.getTitle());
             mDrawerLayout.closeDrawers();
