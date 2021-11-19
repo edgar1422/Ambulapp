@@ -43,21 +43,28 @@ public class MapsFragment extends Fragment {
             public void onMapReady(@NonNull GoogleMap googleMap) {
 
 
-                LocationListener locationListener = new LocationListener() {
-                    @Override
-                    public void onLocationChanged(@NonNull Location location) {
-                        LatLng miUbicacion = new LatLng(location.getLatitude(), location.getLongitude());
-                        googleMap.addMarker(new MarkerOptions().position(miUbicacion).title("Mi ubicación"));
-                        googleMap.moveCamera(CameraUpdateFactory.newLatLng(miUbicacion));
-                        CameraPosition cameraPosition = new CameraPosition.Builder()
-                                .target(miUbicacion)
-                                .zoom(14)
-                                .bearing(90)
-                                .tilt(45)
-                                .build();
-                        googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-                    }
-                };
+                if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                    LocationListener locationListener = new LocationListener() {
+                        @Override
+                        public void onLocationChanged(@NonNull Location location) {
+                            LatLng miUbicacion = new LatLng(location.getLatitude(), location.getLongitude());
+                            googleMap.addMarker(new MarkerOptions().position(miUbicacion).title("Mi ubicación"));
+                            googleMap.moveCamera(CameraUpdateFactory.newLatLng(miUbicacion));
+                            CameraPosition cameraPosition = new CameraPosition.Builder()
+                                    .target(miUbicacion)
+                                    .zoom(14)
+                                    .bearing(90)
+                                    .tilt(45)
+                                    .build();
+                            //googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(miUbicacion,14));
+                        }
+                    };
+                    return;
+                }
+                googleMap.setMyLocationEnabled(true);
+
+
 
             }
         });

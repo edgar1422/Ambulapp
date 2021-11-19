@@ -83,35 +83,48 @@ public class Ingreso extends AppCompatActivity {
     }
 
     private void signIn(String email, String password) {                          // se usa para el login
-        // [START sign_in_with_email]
-        Log.d(TAG, "Ingreso al login");
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "signInWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
-                        } else {
+        try{
+            if (email != null && password != null){
+                // [START sign_in_with_email]
+                Log.d(TAG, "Ingreso al login");
+                mAuth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    // Sign in success, update UI with the signed-in user's information
+                                    Log.d(TAG, "signInWithEmail:success");
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    updateUI(user);
+                                } else {
 
-                            // If sign in fails, display a message to the user.
-                            Log.d(TAG, "signInWithEmail:success");
-                            Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(Ingreso.this, "Datos incorrectos, vuelva a intentarlo", Toast.LENGTH_SHORT).show();
-                            //updateUI(null);
-                        }
-                    }
-                });
-        // [END sign_in_with_email]
+                                    // If sign in fails, display a message to the user.
+                                    Log.d(TAG, "signInWithEmail:success");
+                                    Log.w(TAG, "signInWithEmail:failure", task.getException());
+                                    Toast.makeText(Ingreso.this, "Datos incorrectos, vuelva a intentarlo", Toast.LENGTH_SHORT).show();
+                                    //updateUI(null);
+                                }
+                            }
+                        });
+                // [END sign_in_with_email]
+            }
+
+        } catch (Exception e) {
+            Toast.makeText(this,"Ningun campo debe estar vacio",Toast.LENGTH_LONG).show();
+
+        }
     }
 
     private void updateUI(FirebaseUser user) {                                // se usa para el login
-        Log.d("tester","test");
-        Toast.makeText(Ingreso.this, "Actualizado ", Toast.LENGTH_SHORT).show();
-        Intent i = new Intent(Ingreso.this, ActivityPrincipal.class);
-        startActivity(i);
+        if (user != null){
+            Log.d("tester","test");
+            Toast.makeText(Ingreso.this, "Login exitoso ", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(Ingreso.this, ActivityPrincipal.class);
+            startActivity(i);
+        }else{
+            Toast.makeText(Ingreso.this, "Error al ingresar ", Toast.LENGTH_SHORT).show();
+
+        }
     }
 
 
@@ -141,5 +154,5 @@ public class Ingreso extends AppCompatActivity {
             }
         }).check();
     }
-    
+
 }
