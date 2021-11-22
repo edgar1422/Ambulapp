@@ -40,7 +40,7 @@
             android:name=".Ingreso"
             android:exported="false" />
         <activity
-            android:name=".ActivityPrincipal"
+            android:name=".Fragments_Amb.Activity_Ambulancia"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

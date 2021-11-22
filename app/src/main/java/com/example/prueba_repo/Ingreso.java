@@ -2,7 +2,6 @@ package com.example.prueba_repo;
 
 import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -14,9 +13,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
+import com.example.prueba_repo.Fragments_Amb.Activity_Ambulancia;
+import com.example.prueba_repo.Fragments_Usu.Activity_Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -119,7 +118,7 @@ public class Ingreso extends AppCompatActivity {
         if (user != null){
             Log.d("tester","test");
             Toast.makeText(Ingreso.this, "Login exitoso ", Toast.LENGTH_SHORT).show();
-            Intent i = new Intent(Ingreso.this, ActivityPrincipal.class);
+            Intent i = new Intent(Ingreso.this, Activity_Ambulancia.class);
             startActivity(i);
 
         }else{

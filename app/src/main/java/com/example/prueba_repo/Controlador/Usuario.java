@@ -14,7 +14,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.prueba_repo.ActivityPrincipal;
+import com.example.prueba_repo.Fragments_Amb.Activity_Ambulancia;
+import com.example.prueba_repo.Fragments_Usu.Activity_Usuario;
 import com.example.prueba_repo.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -85,7 +86,7 @@ public class Usuario extends Fragment {
                     int fhone_int = Integer.parseInt(s_fhone);
 
                     if (!s_email.equals("") && !s_password.equals("") && !s_name.equals("") && !s_l_name.equals("")
-                            && !s_city.equals("") && !s_eps.equals("") && !s_direccion.equals("") && !s_born_date.equals("") && fhone_int > 1111111){
+                            && !s_city.equals("") && !s_eps.equals("") && !s_direccion.equals("") && !s_born_date.equals("") && fhone_int > 0){
                         mAuth.createUserWithEmailAndPassword(s_email, s_password)
                                 .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                                     @Override
@@ -139,7 +140,7 @@ public class Usuario extends Fragment {
         if (user != null){
             Log.d("tester","test");
             Toast.makeText(getActivity(), "Usuario creado con exito ", Toast.LENGTH_SHORT).show();
-            Intent i = new Intent(getActivity(), ActivityPrincipal.class);
+            Intent i = new Intent(getActivity(), Activity_Ambulancia.class);
             startActivity(i);
         }else{
             Toast.makeText(getActivity(), "No se pudo crear el usario ", Toast.LENGTH_SHORT).show();

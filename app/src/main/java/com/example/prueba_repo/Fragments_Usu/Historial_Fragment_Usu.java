@@ -1,18 +1,21 @@
-package com.example.prueba_repo;
+package com.example.prueba_repo.Fragments_Usu;
 
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.fragment.app.Fragment;
+import com.example.prueba_repo.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Profile_Fragment#newInstance} factory method to
+ * Use the {@link Historial_Fragment_Usu#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Profile_Fragment extends Fragment {
+public class Historial_Fragment_Usu extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,7 +26,7 @@ public class Profile_Fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Profile_Fragment() {
+    public Historial_Fragment_Usu() {
         // Required empty public constructor
     }
 
@@ -33,11 +36,11 @@ public class Profile_Fragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Profile_Fragment.
+     * @return A new instance of fragment Historial_Fragment_Usu.
      */
     // TODO: Rename and change types and number of parameters
-    public static Profile_Fragment newInstance(String param1, String param2) {
-        Profile_Fragment fragment = new Profile_Fragment();
+    public static Historial_Fragment_Usu newInstance(String param1, String param2) {
+        Historial_Fragment_Usu fragment = new Historial_Fragment_Usu();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -58,6 +61,6 @@ public class Profile_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        return inflater.inflate(R.layout.fragment_historial_usu, container, false);
     }
 }

@@ -7,9 +7,12 @@
     <string name="button_ingresar">INGRESAR</string>
     <string name="cb_recordarme">Recordarme</string>
     <string name="button_registro">REGISTRARSE</string>
-    <string name="Historial">Historial</string>
-    <string name="Perfil">Perfil</string>
-    <string name="Notificaciones">Notificaciones</string>
+    <string name="Historial">Historial_Amb</string>
+    <string name="Historial1">Historial_Usu</string>
+    <string name="Perfil">Perfil_amb</string>
+    <string name="Perfil1">Perfil_usu</string>
+    <string name="Notificaciones">Notificaciones_Amb</string>
+    <string name="Notificaciones1">Notificaciones_Usu</string>
     <string name="Configuración">Configuración</string>
     <string name="Ayuda">Help</string>
     <string name="Inicio">Inicio</string>

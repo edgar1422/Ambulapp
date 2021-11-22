@@ -1,8 +1,6 @@
-package com.example.prueba_repo;
+package com.example.prueba_repo.Fragments_Amb;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,18 +8,19 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.prueba_repo.Ayuda_Fragment;
+import com.example.prueba_repo.Configuraciones_Fragment;
+import com.example.prueba_repo.Ingreso;
+import com.example.prueba_repo.R;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-
-public class ActivityPrincipal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class Activity_Ambulancia extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
         DrawerLayout mDrawerLayout;
         NavigationView navigationView;
@@ -33,7 +32,7 @@ public class ActivityPrincipal extends AppCompatActivity implements NavigationVi
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_principal_amb);
+            setContentView(R.layout.activity_ambulancia);
 
             mDrawerLayout = findViewById(R.id.drawerLayout);
             navigationView = findViewById(R.id.nav_view);
@@ -44,7 +43,7 @@ public class ActivityPrincipal extends AppCompatActivity implements NavigationVi
             mAuth = FirebaseAuth.getInstance();
 
 
-            getSupportFragmentManager().beginTransaction().add(R.id.content, new MapsFragment()).commit();
+            getSupportFragmentManager().beginTransaction().add(R.id.content, new MapsFragment_Amb()).commit();
             setTitle("Inicio");
             // setup toolbar
             setSupportActionBar(toolbar);
@@ -80,16 +79,16 @@ public class ActivityPrincipal extends AppCompatActivity implements NavigationVi
             switch (item.getItemId()) {
 
                 case R.id.nav_Inicio:
-                    ft.replace(R.id.content, new MapsFragment()).commit();
+                    ft.replace(R.id.content, new MapsFragment_Amb()).commit();
                     break;
                 case R.id.nav_profile:
-                    ft.replace(R.id.content, new Profile_Fragment()).commit();
+                    ft.replace(R.id.content, new Profile_Fragment_Amb()).commit();
                     break;
                 case R.id.nav_notification:
-                    ft.replace(R.id.content, new Notificaciones_Fragment()).commit();
+                    ft.replace(R.id.content, new Notificaciones_Fragment_Amb()).commit();
                     break;
                 case R.id.nav_history:
-                    ft.replace(R.id.content, new Historial_Fragment()).commit();
+                    ft.replace(R.id.content, new Historial_Fragment_Amb()).commit();
                     break;
                 case R.id.nav_configuration:
                     ft.replace(R.id.content, new Configuraciones_Fragment()).commit();
@@ -108,8 +107,5 @@ public class ActivityPrincipal extends AppCompatActivity implements NavigationVi
             setTitle(item.getTitle());
             mDrawerLayout.closeDrawers();
         }
-
-
-
 
     }

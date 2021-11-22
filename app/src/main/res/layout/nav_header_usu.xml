@@ -20,13 +20,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Viviana Urrego"
+        android:text="Usuario"
         android:textSize="24dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="miperfil@gmail.com"
+        android:text="Usuario@gmail.com"
         android:textSize="16dp" />
 
 </LinearLayout>

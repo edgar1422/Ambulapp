@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Notificaciones_Fragment">
+    tools:context=".Fragments_Amb.Notificaciones_Fragment_Amb">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
