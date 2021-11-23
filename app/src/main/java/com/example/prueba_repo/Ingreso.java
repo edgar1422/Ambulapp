@@ -118,7 +118,7 @@ public class Ingreso extends AppCompatActivity {
         if (user != null){
             Log.d("tester","test");
             Toast.makeText(Ingreso.this, "Login exitoso ", Toast.LENGTH_SHORT).show();
-            Intent i = new Intent(Ingreso.this, Activity_Ambulancia.class);
+            Intent i = new Intent(Ingreso.this, Activity_Usuario.class);
             startActivity(i);
 
         }else{

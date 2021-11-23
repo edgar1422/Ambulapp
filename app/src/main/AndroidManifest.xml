@@ -43,6 +43,9 @@
             android:name=".Fragments_Amb.Activity_Ambulancia"
             android:exported="false" />
         <activity
+            android:name=".Fragments_Usu.Activity_Usuario"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

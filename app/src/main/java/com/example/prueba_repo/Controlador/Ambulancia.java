@@ -81,8 +81,8 @@ public class Ambulancia extends Fragment {
                 try{
                     int fhone_int = Integer.parseInt(fhone);
 
-                    if (!email.equals("") && !password.equals("") && !name.equals("") && !last_name.equals("")
-                            && !city.equals("") && !placas.equals("") && !dirreccion.equals("") && fhone_int > 0){
+                    if (!email.isEmpty() && !password.isEmpty() && !name.isEmpty() && !last_name.isEmpty()
+                            && !city.isEmpty() && !placas.isEmpty() && !dirreccion.isEmpty() && !fhone.isEmpty()){
                         mAuth.createUserWithEmailAndPassword(email, password)
                                 .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                                     @Override
