@@ -106,7 +106,7 @@ public class Configuraciones_Fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 String nombre = listaTemas.get(recyclerViewTemas.getChildAdapterPosition(v)).getNombre();
-                Toast.makeText(getContext(), "Seleccionó el tema: " + nombre, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Seleccionó: " + nombre, Toast.LENGTH_SHORT).show();
             }
         });
     }

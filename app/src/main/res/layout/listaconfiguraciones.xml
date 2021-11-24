@@ -10,9 +10,9 @@
     >
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="horizontal"
         android:padding="10dp">
 
         <ImageView
@@ -37,12 +37,12 @@
                 android:textStyle="bold" />
 
 
-            <TextView
+            <!--<TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/titulo_tema"
                 android:text="Nombre del tema"
-                android:textSize="11sp" />
+                android:textSize="11sp" />-->
 
 
         </LinearLayout>
