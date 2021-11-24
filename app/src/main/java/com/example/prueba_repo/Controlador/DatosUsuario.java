@@ -2,13 +2,14 @@ package com.example.prueba_repo.Controlador;
 
 public class DatosUsuario {
 
-    String name,l_name, email, password, eps, born_date, city, direccion;
-    int fhone;
+    private String id, name,l_name, email, password, eps, born_date, city, direccion, fhone;
+
 
     public DatosUsuario() {
     }
 
-    public DatosUsuario(String name, String l_name, String email, String password, String eps, String born_date, String city, String direccion, int fhone) {
+    public DatosUsuario(String id, String name, String l_name, String email, String password, String eps, String born_date, String city, String direccion, String fhone) {
+        this.id = id;
         this.name = name;
         this.l_name = l_name;
         this.email = email;
@@ -19,6 +20,10 @@ public class DatosUsuario {
         this.direccion = direccion;
         this.fhone = fhone;
     }
+
+    public String getId() {        return id;    }
+
+    public void setId(String id) {        this.id = id;    }
 
     public String getName() {
         return name;
@@ -84,18 +89,19 @@ public class DatosUsuario {
         this.direccion = direccion;
     }
 
-    public int getFhone() {
+    public String getFhone() {
         return fhone;
     }
 
-    public void setFhone(int fhone) {
+    public void setFhone(String fhone) {
         this.fhone = fhone;
     }
 
     @Override
     public String toString() {
         return "datosAmbulancia" +
-                "Nombres ='" + name + '\'' +
+                "Id ='" + id + '\'' +
+                ", Nombres ='" + name + '\'' +
                 ", Apellidos ='" + l_name+ '\'' +
                 ", Email='" + email+ '\'' +
                 ", Contaseña ='" + password+ '\'' +

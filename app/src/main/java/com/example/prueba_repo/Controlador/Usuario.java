@@ -83,7 +83,7 @@ public class Usuario extends Fragment {
                 String s_fhone = fhone.getText().toString();
 
                 try{
-                    int fhone_int = Integer.parseInt(s_fhone);
+
 
                     if (!s_email.isEmpty() && !s_password.isEmpty() && !s_name.isEmpty() && !s_l_name.isEmpty()
                             && !s_city.isEmpty() && !s_eps.isEmpty() && !s_direccion.isEmpty() && !s_born_date.isEmpty() && !s_fhone.isEmpty()){
@@ -94,13 +94,16 @@ public class Usuario extends Fragment {
                                         if (task.isSuccessful()) {
                                             // Sign in success, update UI with the signed-in user's information
 
-                                            DatosUsuario usuario = new DatosUsuario(s_name,s_l_name,s_email,s_password,s_eps,
-                                                    s_born_date,s_city,s_direccion,fhone_int);
+                                            FirebaseUser user = mAuth.getCurrentUser();
+                                            String id = user.getProviderId();
+
+                                            DatosUsuario usuario = new DatosUsuario(id, s_name,s_l_name,s_email,s_password,s_eps,
+                                                    s_born_date,s_city,s_direccion,s_fhone);
                                             myRef.push().setValue(usuario);
                                             Log.d(TAG, usuario.toString());
 
                                             Log.d(TAG, "createUserWithEmail:success");
-                                            FirebaseUser user = mAuth.getCurrentUser();
+
 
                                             updateUI(user);
                                         } else {

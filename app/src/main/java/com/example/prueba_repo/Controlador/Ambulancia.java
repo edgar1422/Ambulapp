@@ -79,7 +79,7 @@ public class Ambulancia extends Fragment {
 
 
                 try{
-                    int fhone_int = Integer.parseInt(fhone);
+
 
                     if (!email.isEmpty() && !password.isEmpty() && !name.isEmpty() && !last_name.isEmpty()
                             && !city.isEmpty() && !placas.isEmpty() && !dirreccion.isEmpty() && !fhone.isEmpty()){
@@ -90,13 +90,16 @@ public class Ambulancia extends Fragment {
                                         if (task.isSuccessful()) {
                                             // Sign in success, update UI with the signed-in user's information
 
-                                            DatosAmbulancia ambulancia = new DatosAmbulancia(name,last_name,email,
-                                                    password,placas,city,dirreccion,fhone_int);
+                                            FirebaseUser user = mAuth.getCurrentUser();
+                                            String id = user.getProviderId();
+
+                                            DatosAmbulancia ambulancia = new DatosAmbulancia(id, name,last_name,email,
+                                                    password,placas,city,dirreccion,fhone);
                                             myRef.push().setValue(ambulancia);
                                             Log.d(TAG, ambulancia.toString());
 
                                             Log.d(TAG, "createUserWithEmail:success");
-                                            FirebaseUser user = mAuth.getCurrentUser();
+
 
                                             updateUI(user);
                                         } else {
