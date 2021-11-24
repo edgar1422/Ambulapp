@@ -89,11 +89,13 @@ public class Configuraciones_Fragment extends Fragment {
     }
 
     public void cargarLista(){
-        listaTemas.add(new Tema("Azul celeste",R.drawable.color_azul_claro));
-        listaTemas.add(new Tema("Azul oscuro",R.drawable.color_azul_oscuro));
-        listaTemas.add(new Tema("Lila",R.drawable.color_lila));
-        listaTemas.add(new Tema("Rojo",R.drawable.color_rojo));
-        listaTemas.add(new Tema("Rosado",R.drawable.color_rosado));
+        listaTemas.add(new Tema("Unidades Distancia",R.drawable.distancia));
+        listaTemas.add(new Tema("Modo Oscuro",R.drawable.modo_oscuro));
+        listaTemas.add(new Tema("Tamaño Letra",R.drawable.tama_letra));
+        listaTemas.add(new Tema("Politica de privacidad",R.drawable.politica_privacidad));
+        listaTemas.add(new Tema("Acerca de",R.drawable.acerca_de));
+        listaTemas.add(new Tema("Eliminar cuenta",R.drawable.eliminar_cuenta));
+        listaTemas.add(new Tema("Comentarios",R.drawable.comentario));
     }
     public void mostrarDatos(){
         recyclerViewTemas.setLayoutManager(new LinearLayoutManager(getContext()));
