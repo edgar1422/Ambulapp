@@ -2,13 +2,13 @@ package com.example.prueba_repo.Controlador;
 
 public class DatosUsuario {
 
-    private String id, name,l_name, email, password, eps, born_date, city, direccion, fhone;
+    private String id, name,l_name, email, password, eps, born_date, city, direccion, fhone,placas,roll;
 
 
     public DatosUsuario() {
     }
 
-    public DatosUsuario(String id, String name, String l_name, String email, String password, String eps, String born_date, String city, String direccion, String fhone) {
+    public DatosUsuario(String id, String name, String l_name, String email, String password, String eps, String born_date, String city, String direccion, String fhone,String placas,String roll) {
         this.id = id;
         this.name = name;
         this.l_name = l_name;
@@ -19,6 +19,8 @@ public class DatosUsuario {
         this.city = city;
         this.direccion = direccion;
         this.fhone = fhone;
+        this.placas = placas;
+        this.roll=roll;
     }
 
     public String getId() {        return id;    }
@@ -97,6 +99,22 @@ public class DatosUsuario {
         this.fhone = fhone;
     }
 
+    public String getPlacas() {
+        return placas;
+    }
+
+    public void setPlacas(String placas) {
+        this.placas = placas;
+    }
+
+    public String getRoll() {
+        return roll;
+    }
+
+    public void setRoll(String roll) {
+        this.roll = roll;
+    }
+
     @Override
     public String toString() {
         return "datosAmbulancia" +
@@ -110,6 +128,10 @@ public class DatosUsuario {
                 ", Fecha de nacimiento ='" + born_date+ '\'' +
                 ", Ciudad ='" + city+ '\'' +
                 ", Dirección ='" + direccion+ '\'' +
+
+                ", Placas ='" + placas+ '\'' +
+                ", Roll ='" + roll+ '\'' +
+
                 '}';
     }
 }

@@ -37,7 +37,7 @@ public class Ambulancia extends Fragment {
 
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("Ambulancia");
+    DatabaseReference myRef = database.getReference("Usuario");
 
     public Ambulancia() {
         // Required empty public constructor
@@ -64,6 +64,7 @@ public class Ambulancia extends Fragment {
 
 
 
+
         register_amb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,7 +77,9 @@ public class Ambulancia extends Fragment {
                 String placas = placas_amb.getText().toString();
                 String dirreccion = dir_amb.getText().toString();
                 String fhone = fhone_amb.getText().toString();
-
+                String eps= "********";
+                String roll = "ambulancia";
+                String born="********";
 
                 try{
 
@@ -91,10 +94,12 @@ public class Ambulancia extends Fragment {
                                             // Sign in success, update UI with the signed-in user's information
 
                                             FirebaseUser user = mAuth.getCurrentUser();
-                                            String id = user.getProviderId();
+                                            String id = user.getUid();
 
-                                            DatosAmbulancia ambulancia = new DatosAmbulancia(id, name,last_name,email,
-                                                    password,placas,city,dirreccion,fhone);
+                                            DatosUsuario ambulancia = new DatosUsuario(id, name,last_name,email,
+                                                    password,eps,born,city,dirreccion,fhone,placas,roll);
+
+
                                             myRef.push().setValue(ambulancia);
                                             Log.d(TAG, ambulancia.toString());
 

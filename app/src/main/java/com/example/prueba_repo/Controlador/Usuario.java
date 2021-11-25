@@ -81,6 +81,8 @@ public class Usuario extends Fragment {
                 String s_city = city.getText().toString();
                 String s_direccion = direccion.getText().toString();
                 String s_fhone = fhone.getText().toString();
+                String s_placas= "******";
+                String s_roll= "usuario";
 
                 try{
 
@@ -95,10 +97,10 @@ public class Usuario extends Fragment {
                                             // Sign in success, update UI with the signed-in user's information
 
                                             FirebaseUser user = mAuth.getCurrentUser();
-                                            String id = user.getProviderId();
+                                            String id = user.getUid();
 
                                             DatosUsuario usuario = new DatosUsuario(id, s_name,s_l_name,s_email,s_password,s_eps,
-                                                    s_born_date,s_city,s_direccion,s_fhone);
+                                                    s_born_date,s_city,s_direccion,s_fhone,s_placas,s_roll);
                                             myRef.push().setValue(usuario);
                                             Log.d(TAG, usuario.toString());
 
