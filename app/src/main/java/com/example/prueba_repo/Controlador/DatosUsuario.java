@@ -2,14 +2,15 @@ package com.example.prueba_repo.Controlador;
 
 public class DatosUsuario {
 
-    private String id, name,l_name, email, password, eps, born_date, city, direccion, fhone,placas,roll;
+    private String name,l_name, email, password, eps, born_date, city, direccion, fhone,placas,roll;
 
 
     public DatosUsuario() {
     }
 
-    public DatosUsuario(String id, String name, String l_name, String email, String password, String eps, String born_date, String city, String direccion, String fhone,String placas,String roll) {
-        this.id = id;
+    public DatosUsuario(String name, String l_name, String email, String password, String fhone,
+                        String born_date, String eps, String direccion, String city){
+
         this.name = name;
         this.l_name = l_name;
         this.email = email;
@@ -19,13 +20,23 @@ public class DatosUsuario {
         this.city = city;
         this.direccion = direccion;
         this.fhone = fhone;
-        this.placas = placas;
-        this.roll=roll;
+
+
     }
 
-    public String getId() {        return id;    }
+    public DatosUsuario(String name, String l_name, String email, String password, String city,
+                        String direccion, String fhone,String placas) {
 
-    public void setId(String id) {        this.id = id;    }
+        this.name = name;
+        this.l_name = l_name;
+        this.email = email;
+        this.password = password;
+        this.city = city;
+        this.direccion = direccion;
+        this.fhone = fhone;
+        this.placas = placas;
+        //this.roll=roll;
+    }
 
     public String getName() {
         return name;
@@ -107,19 +118,11 @@ public class DatosUsuario {
         this.placas = placas;
     }
 
-    public String getRoll() {
-        return roll;
-    }
-
-    public void setRoll(String roll) {
-        this.roll = roll;
-    }
-
     @Override
     public String toString() {
         return "datosAmbulancia" +
-                "Id ='" + id + '\'' +
-                ", Nombres ='" + name + '\'' +
+
+                "Nombres ='" + name + '\'' +
                 ", Apellidos ='" + l_name+ '\'' +
                 ", Email='" + email+ '\'' +
                 ", Contaseña ='" + password+ '\'' +

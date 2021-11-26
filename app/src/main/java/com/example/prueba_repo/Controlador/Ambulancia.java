@@ -37,7 +37,7 @@ public class Ambulancia extends Fragment {
 
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("Usuario");
+    DatabaseReference myRef = database.getReference("Usuarios");
 
     public Ambulancia() {
         // Required empty public constructor
@@ -96,12 +96,12 @@ public class Ambulancia extends Fragment {
                                             FirebaseUser user = mAuth.getCurrentUser();
                                             String id = user.getUid();
 
-                                            DatosUsuario ambulancia = new DatosUsuario(id, name,last_name,email,
-                                                    password,eps,born,city,dirreccion,fhone,placas,roll);
+                                            DatosUsuario ambulancia = new DatosUsuario(name,last_name,email,
+                                                    password,city,dirreccion,fhone,placas);
 
 
-                                            myRef.push().setValue(ambulancia);
-                                            Log.d(TAG, ambulancia.toString());
+                                            myRef.child("Ambulancia").child(id).setValue(ambulancia);;
+                                            //Log.d(TAG, ambulancia.toString());
 
                                             Log.d(TAG, "createUserWithEmail:success");
 

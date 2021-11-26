@@ -35,7 +35,7 @@ public class Usuario extends Fragment {
     private FirebaseAuth mAuth;  //firebase
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("Usuario");
+    DatabaseReference myRef = database.getReference("Usuarios");
 
     public Usuario() {
         // Required empty public constructor
@@ -99,10 +99,12 @@ public class Usuario extends Fragment {
                                             FirebaseUser user = mAuth.getCurrentUser();
                                             String id = user.getUid();
 
-                                            DatosUsuario usuario = new DatosUsuario(id, s_name,s_l_name,s_email,s_password,s_eps,
-                                                    s_born_date,s_city,s_direccion,s_fhone,s_placas,s_roll);
-                                            myRef.push().setValue(usuario);
-                                            Log.d(TAG, usuario.toString());
+                                            DatosUsuario usuario = new DatosUsuario(s_name,s_l_name,s_email,s_password,s_fhone,
+                                                    s_born_date,s_eps,s_direccion,s_city);
+                                            myRef.child("Usuario").child(id).setValue(usuario);
+
+
+                                            //Log.d(TAG, usuario.toString());
 
                                             Log.d(TAG, "createUserWithEmail:success");
 
@@ -131,6 +133,8 @@ public class Usuario extends Fragment {
 
         return  root;
     }
+
+
 
     @Override
     public void onStart() {

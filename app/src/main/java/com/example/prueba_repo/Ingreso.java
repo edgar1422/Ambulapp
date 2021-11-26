@@ -22,8 +22,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -38,7 +40,7 @@ public class Ingreso extends AppCompatActivity {
     private FirebaseAuth mAuth;                                                // se usa para el login
     private static final String TAG = "tester";                                // se usa para el login
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("Usuario");
+    DatabaseReference myRef = database.getReference("Usuarios");
 
 
     @Override
@@ -120,32 +122,43 @@ public class Ingreso extends AppCompatActivity {
 
     private void updateUI(FirebaseUser user) {                                // se usa para el login
         if (user != null){
-            String userId = "-MpMMSQbKlb9fjgiNkyQ";
+            String userId = user.getUid();
+
 
             Log.d("Test",userId);
-            myRef.child(userId).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            myRef.child("Usuario").child(userId).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
                     if (task.isSuccessful()) {
                         Log.d("firebase2", String.valueOf(task.getResult().getValue()));
+                        String user = String.valueOf(task.getResult().getValue());
+                        if (!user.equals("null")){
+                            // Log.d("tester","test");
+                            Toast.makeText(Ingreso.this, "Ingreso exitoso", Toast.LENGTH_SHORT).show();
+                            Intent i = new Intent(Ingreso.this, Activity_Usuario.class);
+                            startActivity(i);
+                        }myRef.child("Ambulancia").child(userId).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                                Log.d("firebase2", String.valueOf(task.getResult().getValue()));
+                                String user = String.valueOf(task.getResult().getValue());
+                                if(!user.equals("null")){
+                                    Toast.makeText(Ingreso.this, "Ingreso exitoso", Toast.LENGTH_SHORT).show();
+                                    Intent a = new Intent(Ingreso.this, Activity_Ambulancia.class);
+                                    startActivity(a);
+                                }
+                            }
+                        });
                     }
                     else {
-                        Log.d("firebase1", "Error getting data", task.getException());
+                        Log.d("firebase2", "Error getting data", task.getException());
                     }
                 }
             });
 
 
-
-
-
-           // Log.d("tester","test");
-            Toast.makeText(Ingreso.this, "Login exitoso ", Toast.LENGTH_SHORT).show();
-            //Intent i = new Intent(Ingreso.this, Activity_Usuario.class);
-            //startActivity(i);
-
         }else{
-            Toast.makeText(Ingreso.this, "Error al ingresar ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Ingreso.this, "El usuario no existe", Toast.LENGTH_SHORT).show();
 
         }
 

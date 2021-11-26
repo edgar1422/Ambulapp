@@ -18,12 +18,14 @@
         tools:visibility="visible" />
 
     <TextView
+        android:id="@+id/tv_nombre_usu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Usuario"
         android:textSize="24dp" />
 
     <TextView
+        android:id="@+id/tv_email_usu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Usuario@gmail.com"
