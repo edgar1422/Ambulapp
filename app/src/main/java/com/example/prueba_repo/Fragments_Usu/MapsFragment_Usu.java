@@ -49,21 +49,26 @@ public class MapsFragment_Usu extends Fragment {
             public void onMapReady(@NonNull GoogleMap googleMap) {
 
 
+             LatLng colombia = new LatLng(4.099917,-72.9088133);
+                googleMap.addMarker(new MarkerOptions().position(colombia).title("Colombia"));
+                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(colombia,6));
+                googleMap.getUiSettings().setZoomControlsEnabled(true);
+
+
                 if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                     LocationListener locationListener = new LocationListener() {
                         @Override
                         public void onLocationChanged(@NonNull Location location) {
+
                             LatLng miUbicacion = new LatLng(location.getLatitude(), location.getLongitude());
                             googleMap.addMarker(new MarkerOptions().position(miUbicacion).title("Mi ubicación"));
-                            googleMap.moveCamera(CameraUpdateFactory.newLatLng(miUbicacion));
+                            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(miUbicacion,14));
                             CameraPosition cameraPosition = new CameraPosition.Builder()
                                     .target(miUbicacion)
                                     .zoom(14)
                                     .bearing(90)
                                     .tilt(45)
                                     .build();
-                            //googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-                            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(miUbicacion, 14));
                         }
                     };
                     return;
@@ -75,8 +80,6 @@ public class MapsFragment_Usu extends Fragment {
 
         crear_Reportes = (Button) view.findViewById(R.id.btn_crearReportes);
         crear_Reportes.setOnClickListener(new View.OnClickListener() {
-
-
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Todos debemos hacer uso responsable de los servicios de ambulancias para salvar vidas ", Toast.LENGTH_LONG).show();
