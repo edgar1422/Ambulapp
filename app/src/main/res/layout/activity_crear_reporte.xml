@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Fragments_Usu.Activity_crearReporte"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@drawable/fondo_amb"
+    android:orientation="vertical">
+
+     <TextView
+         android:id="@+id/textview_0"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="Creando reporte del accidente"
+         android:gravity="center"
+         android:textSize="20sp"
+         android:textStyle="bold"
+         android:textColor="@android:color/holo_blue_dark"
+         android:fontFamily="sans-serif-condensed"
+         android:layout_marginBottom="20dp"/>
+
+     <TextView
+         android:id="@+id/textview_1"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:fontFamily="casual"
+         android:text="Número de contacto"
+         android:textColor="@android:color/black"
+         android:textSize="15sp"
+         android:textStyle="bold" />
+
+     <EditText
+         android:id="@+id/editTextPhone"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginBottom="15dp"
+         android:ems="10"
+         android:hint="Registrar número "
+         android:inputType="phone"
+         android:textSize="14sp"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintHorizontal_bias="0.495"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+         app:layout_constraintVertical_bias="0.849"
+         tools:ignore="TouchTargetSizeCheck" />
+
+     <TextView
+         android:id="@+id/textview"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginBottom="5dp"
+         android:fontFamily="casual"
+         android:text="Tipo de Accidente"
+         android:textColor="@android:color/black"
+         android:textSize="15sp"
+         android:textStyle="bold" />
+
+     <Spinner
+         android:id="@+id/sp_item"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginBottom="15dp"
+         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+     <TextView
+         android:id="@+id/textview_2"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="¿Lugar del Accidente?"
+         android:textSize="15sp"
+         android:textStyle="bold"
+         android:textColor="@android:color/black"
+         android:fontFamily="casual" />
+
+     <EditText
+         android:id="@+id/direccion_acc"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:ems="10"
+         android:hint="Dirección"
+         android:inputType="textPersonName"
+         android:textSize="14sp"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintHorizontal_bias="0.495"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+         app:layout_constraintVertical_bias="0.849"
+         tools:ignore="TouchTargetSizeCheck"
+         android:layout_marginBottom="15dp"/>
+
+     <TextView
+         android:id="@+id/textview_3"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:fontFamily="casual"
+         android:text="Observaciones"
+         android:textColor="@android:color/black"
+         android:textSize="15sp"
+         android:textStyle="bold" />
+
+     <EditText
+         android:id="@+id/observaciones"
+         android:layout_width="match_parent"
+         android:layout_height="52dp"
+         android:layout_marginBottom="200dp"
+         android:ems="10"
+         android:hint="Registre la información relevante para el servicio"
+         android:inputType="textPersonName"
+         android:textSize="14sp"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintHorizontal_bias="0.495"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+         app:layout_constraintVertical_bias="0.849"
+         tools:ignore="TouchTargetSizeCheck" />
+
+     <Button
+         android:layout_width="347dp"
+         android:layout_height="34dp"
+         android:background="#C41C80EC"
+         android:text="enviar reporte"
+         android:textColor="#F6F4F4"
+         android:textSize="16sp"
+         tools:ignore="TouchTargetSizeCheck" />
+
+
+</LinearLayout>

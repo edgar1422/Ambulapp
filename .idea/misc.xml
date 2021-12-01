@@ -13,20 +13,24 @@
         <entry key="..\:/Users/Administrador/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/registro_usu.xml" value="0.24909420289855072" />
         <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/drawable/ic_home.xml" value="0.3828125" />
         <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/drawable/ic_menu.xml" value="0.3828125" />
+        <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/activity_crear_reporte.xml" value="0.25" />
         <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/activity_ingreso.xml" value="0.24094202898550723" />
         <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/activity_principal.xml" value="0.25" />
         <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/activity_principal_amb.xml" value="0.2015625" />
+        <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/activity_registro.xml" value="0.20572916666666666" />
         <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/activity_registro_usu.xml" value="0.33" />
         <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/fragment_ambulancia.xml" value="0.2957427536231884" />
         <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/fragment_ayuda.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/fragment_configuraciones.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/fragment_historial.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/fragment_maps_amb.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/fragment_maps_amb.xml" value="0.25" />
+        <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/fragment_maps_usu.xml" value="0.35733695652173914" />
         <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/fragment_notificaciones.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/fragment_notificaciones_amb.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/fragment_profile.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/fragment_usuario.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/item_spinner.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/listaconfiguraciones.xml" value="0.33505154639175255" />
         <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/nav_header.xml" value="0.24094202898550723" />
         <entry key="..\:/Users/Viviana Urrego/AndroidStudioProjects/prueba_repo/app/src/main/res/layout/registro_amb.xml" value="0.2957427536231884" />

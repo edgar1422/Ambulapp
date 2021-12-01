@@ -60,9 +60,6 @@ public class MapsFragment_Amb extends Fragment {
                     return;
                 }
                 googleMap.setMyLocationEnabled(true);
-
-
-
             }
         });
 

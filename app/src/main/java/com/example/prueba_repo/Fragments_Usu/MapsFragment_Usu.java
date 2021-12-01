@@ -1,6 +1,7 @@
 package com.example.prueba_repo.Fragments_Usu;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -13,7 +14,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
+import com.example.prueba_repo.Ayuda_Fragment;
 import com.example.prueba_repo.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -25,6 +29,10 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 
 public class MapsFragment_Usu extends Fragment {
+
+    Button crear_Reportes;
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,20 +63,32 @@ public class MapsFragment_Usu extends Fragment {
                                     .tilt(45)
                                     .build();
                             //googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-                            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(miUbicacion,14));
+                            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(miUbicacion, 14));
                         }
                     };
                     return;
                 }
                 googleMap.setMyLocationEnabled(true);
-
-
-
             }
+
         });
 
+        crear_Reportes = (Button) view.findViewById(R.id.btn_crearReportes);
+        crear_Reportes.setOnClickListener(new View.OnClickListener() {
 
+
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Todos debemos hacer uso responsable de los servicios de ambulancias para salvar vidas ", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(getActivity(), Activity_crearReporte.class);
+                startActivity(i);
+
+            }
+
+        });
 
         return view;
     }
+
 }
+

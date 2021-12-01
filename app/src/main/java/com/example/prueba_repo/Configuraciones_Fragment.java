@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Toast;
 
+import androidx.appcompat.view.SupportActionModeWrapper;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -65,6 +66,7 @@ public class Configuraciones_Fragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -77,6 +79,7 @@ public class Configuraciones_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_configuraciones, container, false);
         recyclerViewTemas = view.findViewById(R.id.recyclerView);
@@ -85,6 +88,7 @@ public class Configuraciones_Fragment extends Fragment {
         cargarLista();
         //mostrar datos
         mostrarDatos();
+
         return view;
     }
 

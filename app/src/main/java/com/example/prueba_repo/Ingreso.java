@@ -161,11 +161,6 @@ public class Ingreso extends AppCompatActivity {
             Toast.makeText(Ingreso.this, "El usuario no existe", Toast.LENGTH_SHORT).show();
 
         }
-
-
-
-
-
     }
 
 

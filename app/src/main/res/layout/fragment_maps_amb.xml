@@ -12,7 +12,7 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="382dp"
         android:layout_height="534dp"
-        app:layout_constraintBottom_toTopOf="@+id/bt_reportes"
+        app:layout_constraintBottom_toTopOf="@+id/btn_verReportes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,7 +20,7 @@
         tools:context=".Fragments_Amb.MapsFragment_Amb" />
 
     <Button
-        android:id="@+id/bt_reportes"
+        android:id="@+id/btn_verReportes"
         android:layout_width="128dp"
         android:layout_height="36dp"
         android:layout_marginTop="4dp"
