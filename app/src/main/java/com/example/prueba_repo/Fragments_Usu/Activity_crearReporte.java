@@ -1,14 +1,33 @@
 package com.example.prueba_repo.Fragments_Usu;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.example.prueba_repo.Adaptadores.Adapter_tiposAccidentes;
 import com.example.prueba_repo.Entidades.tiposAccidentes;
 import com.example.prueba_repo.R;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 
 public class Activity_crearReporte extends AppCompatActivity {
@@ -17,6 +36,9 @@ public class Activity_crearReporte extends AppCompatActivity {
     private tiposAccidentes objAccidentes;
     private Adapter_tiposAccidentes adapterAccidentes;
     private ArrayList<tiposAccidentes> AccidentesList;
+    private EditText adress;
+    private FusedLocationProviderClient fusedLocationClient;
+    private String direcccion;
 
 
     @Override
@@ -25,11 +47,43 @@ public class Activity_crearReporte extends AppCompatActivity {
         setContentView(R.layout.activity_crear_reporte);
 
 
+
+
         sp_tiposAccidentes = (Spinner) findViewById(R.id.sp_item);
+        adress = (EditText) findViewById(R.id.direccion_acc);
 
         cargarLista();
         adapterAccidentes = new Adapter_tiposAccidentes(this,AccidentesList);
         sp_tiposAccidentes.setAdapter(adapterAccidentes);
+
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;}
+        fusedLocationClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
+            @Override
+            public void onComplete(@NonNull Task<Location> task) {
+                Location location = task.getResult();
+
+                if (location != null) {
+                    try {
+                        Geocoder geocoder = new Geocoder(Activity_crearReporte.this, Locale.getDefault());
+                        List<Address> addresses = geocoder.getFromLocation(
+                                location.getLatitude(), location.getLongitude(), 1
+                        );
+                        direcccion = addresses.get(0).getAddressLine(0);
+                        adress.setText(direcccion);
+
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+
+
+
     }
 
     public void cargarLista() {
