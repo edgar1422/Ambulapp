@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">prueba_repo</string>
+    <string name="app_name">Ambulapp</string>
     <string name="tv_ingreso">INGRESO</string>
     <string name="tv_text1">Por favor ingrese su información</string>
     <string name="et_correo">Ingrese su correo</string>
