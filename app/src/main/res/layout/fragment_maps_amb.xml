@@ -11,28 +11,12 @@
         android:id="@+id/google_map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="610dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_verReportes"
+        android:layout_height="600dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:context=".Fragments_Amb.MapsFragment_Amb" />
-
-    <Button
-        android:id="@+id/btn_verReportes"
-        android:layout_width="128dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="4dp"
-        android:background="#C41C80EC"
-        android:text="Ver Reportes"
-        android:textColor="#F6F4F4"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.537"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/google_map"
-        tools:ignore="TouchTargetSizeCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

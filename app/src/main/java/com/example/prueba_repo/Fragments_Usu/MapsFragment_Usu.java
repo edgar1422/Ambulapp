@@ -111,19 +111,6 @@ public class MapsFragment_Usu extends Fragment {
 
         });
 
-        crear_Reportes = (Button) view.findViewById(R.id.btn_crearReportes);
-        crear_Reportes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(), "Todos debemos hacer uso responsable" +
-                        " de los servicios de ambulancias para salvar vidas ", Toast.LENGTH_LONG).show();
-                Intent i = new Intent(getActivity(), Activity_crearReporte.class);
-
-                startActivity(i);
-
-            }
-
-        });
 
         return view;
     }

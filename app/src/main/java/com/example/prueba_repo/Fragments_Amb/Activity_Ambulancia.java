@@ -24,7 +24,7 @@ public class Activity_Ambulancia extends AppCompatActivity implements Navigation
 
         DrawerLayout mDrawerLayout;
         NavigationView navigationView;
-        Toolbar toolbar;
+        Toolbar toolbar_amb;
         private FirebaseAuth mAuth;
 
 
@@ -36,7 +36,7 @@ public class Activity_Ambulancia extends AppCompatActivity implements Navigation
 
             mDrawerLayout = findViewById(R.id.drawerLayout);
             navigationView = findViewById(R.id.nav_view);
-            toolbar = findViewById(R.id.toolbar);
+            toolbar_amb = findViewById(R.id.toolbar_amb);
 
             // ...
         // Initialize Firebase Auth
@@ -46,7 +46,7 @@ public class Activity_Ambulancia extends AppCompatActivity implements Navigation
             getSupportFragmentManager().beginTransaction().add(R.id.content, new MapsFragment_Amb()).commit();
             setTitle("Inicio");
             // setup toolbar
-            setSupportActionBar(toolbar);
+            setSupportActionBar(toolbar_amb);
             navigationView.setNavigationItemSelectedListener(this);
 
 
@@ -63,6 +63,7 @@ public class Activity_Ambulancia extends AppCompatActivity implements Navigation
 
             NavigationView navigationView = findViewById(R.id.nav_view);
             navigationView.setItemIconTintList(null);
+
 
         }
 

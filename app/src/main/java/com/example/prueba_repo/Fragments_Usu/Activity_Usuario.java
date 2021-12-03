@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +28,7 @@ public class Activity_Usuario extends AppCompatActivity implements NavigationVie
     DrawerLayout mDrawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
+    Button btn_crearReportes;
     private FirebaseAuth mAuth;
 
     @Override
@@ -61,6 +64,20 @@ public class Activity_Usuario extends AppCompatActivity implements NavigationVie
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setItemIconTintList(null);
+
+        btn_crearReportes = (Button) findViewById(R.id.btn_crearReportes);
+        btn_crearReportes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Activity_Usuario.this, "Todos debemos hacer uso responsable" +
+                        " de los servicios de ambulancias para salvar vidas ", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(Activity_Usuario.this, Activity_crearReporte.class);
+                startActivity(i);
+
+            }
+
+        });
+
 
     }
 
