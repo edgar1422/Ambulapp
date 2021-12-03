@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.prueba_repo">
+    package="com.example.Ambulapp">
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -20,7 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Prueba_repo">
         <activity
-            android:name=".Fragments_Usu.Activity_crearReporte"
+            android:name="com.example.Ambulapp.Fragments_Usu.Activity_crearReporte"
             android:exported="false" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -35,19 +35,19 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".Registro"
+            android:name="com.example.Ambulapp.Registro"
             android:exported="false" />
         <activity
-            android:name=".Ingreso"
+            android:name="com.example.Ambulapp.Ingreso"
             android:exported="false" />
         <activity
-            android:name=".Fragments_Amb.Activity_Ambulancia"
+            android:name="com.example.Ambulapp.Fragments_Amb.Activity_Ambulancia"
             android:exported="false" />
         <activity
-            android:name=".Fragments_Usu.Activity_Usuario"
+            android:name="com.example.Ambulapp.Fragments_Usu.Activity_Usuario"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.Ambulapp.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
