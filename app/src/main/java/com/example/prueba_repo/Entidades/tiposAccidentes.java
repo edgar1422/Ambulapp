@@ -7,9 +7,9 @@ public class tiposAccidentes {
 
     public tiposAccidentes() { }
 
-    public tiposAccidentes(String nombre_accidente, int imagen_accidente) {
+    public tiposAccidentes(String nombre_accidente/*, int imagen_accidente*/) {
         this.nombre_accidente = nombre_accidente;
-        this.imagen_accidente = imagen_accidente;
+        //this.imagen_accidente = imagen_accidente;
     }
 
     public String getNombre_accidente() {

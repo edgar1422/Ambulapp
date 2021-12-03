@@ -81,7 +81,7 @@ public class MapsFragment_Usu extends Fragment {
                                 );
                                 LatLng miUbicacion = new LatLng(addresses.get(0).getLatitude(), addresses.get(0).getLongitude());
                                 googleMap.addMarker(new MarkerOptions().position(miUbicacion).title(addresses.get(0).getAddressLine(0)));
-                                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(miUbicacion,14));
+                                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(miUbicacion,17));
                                 googleMap.getUiSettings().setZoomControlsEnabled(true);
 
 

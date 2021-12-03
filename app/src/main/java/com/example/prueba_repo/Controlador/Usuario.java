@@ -81,8 +81,7 @@ public class Usuario extends Fragment {
                 String s_city = city.getText().toString();
                 String s_direccion = direccion.getText().toString();
                 String s_fhone = fhone.getText().toString();
-                String s_placas= "******";
-                String s_roll= "usuario";
+
 
                 try{
 

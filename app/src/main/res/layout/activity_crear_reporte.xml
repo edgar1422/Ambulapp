@@ -106,13 +106,12 @@
          android:textStyle="bold" />
 
      <EditText
-         android:id="@+id/observaciones"
+         android:id="@+id/et_observaciones"
          android:layout_width="match_parent"
          android:layout_height="52dp"
          android:layout_marginBottom="200dp"
          android:ems="10"
          android:hint="Registre la información relevante para el servicio"
-         android:inputType="textPersonName"
          android:textSize="14sp"
          app:layout_constraintBottom_toBottomOf="parent"
          app:layout_constraintEnd_toEndOf="parent"
@@ -123,6 +122,7 @@
          tools:ignore="TouchTargetSizeCheck" />
 
      <Button
+         android:id="@+id/btn_reporte"
          android:layout_width="347dp"
          android:layout_height="34dp"
          android:background="#C41C80EC"
